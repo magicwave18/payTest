@@ -11,11 +11,6 @@ import (
 	"time"
 )
 
-//
-// TestAliPay
-//  @Description:
-//  @param t
-//
 func main() {
 	// 1. 初始化，appid：应用ID；privateKey：应用私钥；isProd：是否是生产环境
 	client, err := alipay.NewClient(config.AppId, config.AppPrivateKey, false)
@@ -24,10 +19,10 @@ func main() {
 		return
 	}
 	client.SetLocation(alipay.LocationShanghai). // 设置时区，不设置或出错均为默认服务器时间
-							SetCharset(alipay.UTF8).        // 设置字符编码，不设置时，默认 utf-8
-							SetSignType(alipay.RSA2).       // 设置签名类型，不设置时，默认 RSA2
-							SetReturnUrl(config.ReturnURL). // 设置返回URL
-							SetNotifyUrl(config.NotifyURL)  // 设置异步通知URL
+		SetCharset(alipay.UTF8). // 设置字符编码，不设置时，默认 utf-8
+		SetSignType(alipay.RSA2). // 设置签名类型，不设置时，默认 RSA2
+		SetReturnUrl(config.ReturnURL). // 设置返回URL
+		SetNotifyUrl(config.NotifyURL) // 设置异步通知URL
 	// 2. 填写交易内容，下面4个set里面的内容是必填的
 	outTradeNo := time.Now().Unix()
 	xlog.Debugf("outTradeNo: %d\n", outTradeNo)

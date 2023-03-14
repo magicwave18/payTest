@@ -12,9 +12,9 @@ const (
 	// ProductCode 支付宝交易参数，见https://opendocs.alipay.com/open/028r8t?scene=22中的请求参数表格
 	ProductCode = "FAST_INSTANT_TRADE_PAY"
 	// Host 内网穿透后的地址
-	Host = "ec70-2001-250-4000-5113-f549-e749-b2bf-4494.ap.ngrok.io"
+	Host = "3pb8598515.qicp.vip:32882"
 	// NotifyURL 异步返回接口url
-	NotifyURL = "https://" + Host + "/pay/alipay/notify"
+	NotifyURL = "http://" + Host + "/pay/alipay/notify"
 	// ReturnURL 同步返回接口url
-	ReturnURL = "https://" + Host + "/pay/alipay/return"
+	ReturnURL = "http://" + Host + "/pay/alipay/return"
 )
